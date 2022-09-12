@@ -1,0 +1,21 @@
+version: '3'
+ 
+services:
+  ubuntu-gui:
+    build: ./gui
+    container_name: 'ubuntu-gui'
+    tty: true
+    ports:
+      - 8080:80
+    deploy:
+        resources:
+            limits:
+              cpus: 3
+              memory: 8000M
+            reservations:
+              cpus: 2
+              memory: 4000M
+    volumes:
+          - type: bind
+            source: './raw_firmwares/'
+            target: '/mnt/raw_firmwares'
