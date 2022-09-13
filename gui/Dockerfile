@@ -16,5 +16,7 @@ RUN echo 'export PATH=$PATH:/root/firmusa/firmware-mod-kit/src/squashfs-3.0/' >>
 RUN cd sasquatch && ./build.sh
 RUN cd /root/firmusa/
 RUN git clone https://github.com/usaribbon/firmware-mod-kit.git
+RUN git clone https://github.com/usaribbon/firmddle-ghidrascript.git
 RUN chmod +x /root/firmware-mod-kit/extract_elf.sh
+RUN chmod +x /root/firmware-mod-kit/import_elf_ghidra.sh
 RUN chmod +x /root/firmware-mod-kit/src/binwalk-2.1.1/src/scripts/binwalk
