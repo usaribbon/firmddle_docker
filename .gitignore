@@ -1,3 +1,9 @@
 raw_firmwares/thomsfirmware
 raw_firmwares/eclipse/*
+raw_firmwares/ghidraprj/*
+raw_firmwares/elf/*
+raw_firmwares/firmddle-ghidrascript/*
+raw_firmwares/extracted/*
 .DS*
+bin/*
+!sample.*
