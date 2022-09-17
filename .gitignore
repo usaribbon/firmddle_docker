@@ -6,4 +6,4 @@ raw_firmwares/firmddle-ghidrascript/*
 raw_firmwares/extracted/*
 .DS*
 bin/*
-!sample.*
+!sample*
