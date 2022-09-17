@@ -52,8 +52,5 @@
 1. GhidraのスクリプトをGhidraにインポートします
 
 
-## Ghidraのスクリプトをプロジェクト内のすべてのELFファイルに適用する
-/GHIDRAのディレクトリ/ghidra_10.1.2_PUBLIC/support/analyzeHeadless.bat ${プロジェクトが格納されている上位ディレクトリ} ${プロジェクト名} -scriptPath /SCRIPTパス/ghidra_scripts -postScript スクリプト名.java -import ${ELFパス} -overwrite
-
-## Ghidraのスクリプトをプロジェクト内のすべてのELFファイルに適用する
-/GHIDRAのディレクトリ/ghidra_10.1.2_PUBLIC/support/analyzeHeadless.bat /mnt/raw_firmwares/ghidraprj PRJNAME -scriptPath /root/firmddle-ghidra-script -postScript yoda20220907_API.java -import ${ELFパス} -overwrite >> output.log
+## Ghidraのスクリプトをプロジェクト内のすべてのELFファイルに適用する(現状VNC上のみ)
+./firmware-mod-kit/ghidra_headless_script.sh
