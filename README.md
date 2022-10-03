@@ -11,19 +11,7 @@
   * もしくは`git clone https://github.com/usaribbon/firmddle_docker.git`
 4. ダウンロードしたgitリポジトリに移動してください。
 5. 先程ダウンロードしたeclipseのtar.gzファイルを、firmddle_docker/raw_firmwares/eclipse/のディレクトリにコピーしてください。
-6. 以下のコマンドを実行し、dockerをビルド＆起動させてください。
-  ```
-  docker-compose build
-  docker-compose up -d
-  ```
-
-7. ホストPCのWEBブラウザから`http://127.0.0.1:8080/`にアクセスしてdockerコンテナに入ってください。
-  ![docker](https://user-images.githubusercontent.com/2094358/193526468-df754d54-5979-439d-b004-5de2ee806302.png)
-8. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
-  ![docker](https://user-images.githubusercontent.com/2094358/193527140-b074dc9c-6243-42c9-b458-4cf1d3ec6b8e.png)
-　 
-
-# ファームウェアを分割する
+6. 以下のようなディレクトリ構造になっていることを確認してください。
 ```
 .
 ├── docker-compose.yml
@@ -38,6 +26,19 @@
     ├── raw
     │   └── test.bin
 ```
+7. 以下のコマンドを実行し、dockerをビルド＆起動させてください。
+  ```
+  docker-compose build
+  docker-compose up -d
+  ```
+
+7. ホストPCのWEBブラウザから`http://127.0.0.1:8080/`にアクセスしてdockerコンテナに入ってください。
+  ![docker](https://user-images.githubusercontent.com/2094358/193526468-df754d54-5979-439d-b004-5de2ee806302.png)
+8. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
+  ![docker](https://user-images.githubusercontent.com/2094358/193527140-b074dc9c-6243-42c9-b458-4cf1d3ec6b8e.png)
+　 
+
+# ファームウェアを分割する
 1. 分割したいファームウェアは、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/にマウントされています。
 1. docker上で`/root/firmware-mod-kit/extract_elf.sh`　を実行してください。/mnt/raw_firmwares/に置かれているファームウェアの分割が始まります。
 1. 分割されたファームウェアは、/mnt/raw_firmwares/extracted/に置かれます。
