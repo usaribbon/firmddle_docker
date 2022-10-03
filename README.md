@@ -24,7 +24,8 @@
     ├── extracted
     ├── ghidraprj
     ├── raw
-    │   └── test.bin
+    │   └── Aceex-NR22
+    │     └── r13832-Aceex22.bin
 ```
 7. 以下のコマンドを実行し、dockerをビルド＆起動させてください。
   ```
