@@ -9,9 +9,7 @@
 3. 以下のURLからこのgitリポジトリをダウンロードしてください。
   * https://github.com/usaribbon/firmddle_docker/archive/refs/heads/main.zip
   * もしくは`git clone https://github.com/usaribbon/firmddle_docker.git`
-4. ダウンロードしたgitリポジトリに移動してください。
-5. 先程ダウンロードしたeclipseのtar.gzファイルを、firmddle_docker/raw_firmwares/eclipse/のディレクトリにコピーしてください。
-6. 以下のようなディレクトリ構造になっていることを確認してください。
+4. ダウンロードしたgitリポジトリに移動し、以下のようなディレクトリ構造になっていることを確認してください。
 ```
 .
 ├── docker-compose.yml
@@ -27,6 +25,7 @@
     │   └── Aceex-NR22
     │     └── r13832-Aceex22.bin
 ```
+5. 先程ダウンロードしたeclipseのtar.gzファイルを、firmddle_docker/raw_firmwares/eclipse/のディレクトリにコピーしてください。
 7. 以下のコマンドを実行し、dockerをビルド＆起動させてください。
   ```
   docker-compose build
