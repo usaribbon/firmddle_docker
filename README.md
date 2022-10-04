@@ -9,23 +9,23 @@
 3. 以下のURLからこのgitリポジトリをダウンロードしてください。
   * https://github.com/usaribbon/firmddle_docker/archive/refs/heads/main.zip
   * もしくは`git clone https://github.com/usaribbon/firmddle_docker.git`
-4. ダウンロードしたgitリポジトリに移動してください。
-5. 先程ダウンロードしたeclipseのtar.gzファイルを、firmddle_docker/raw_firmwares/eclipse/のディレクトリにコピーしてください。
-6. 以下のようなディレクトリ構造になっていることを確認してください。
+4. ダウンロードしたgitリポジトリに移動し、以下のようなディレクトリ構造になっていることを確認してください。
 ```
 .
 ├── docker-compose.yml
 ├── gui
 │   └── Dockerfile
-└── raw_firmwares
+└── raw_firmwares   ←docker上では/mnt/raw_firmwares/としてマウントされます
     ├── eclipse
     │   └── eclipse-committers-2022-06-R-linux-gtk-x86_64.tar.gz
     ├── elf
     ├── extracted
     ├── ghidraprj
     ├── raw
-    │   └── test.bin
+    │   └── Aceex-NR22
+    │     └── r13832-Aceex22.bin
 ```
+5. 先程ダウンロードしたeclipseのtar.gzファイルを、firmddle_docker/raw_firmwares/eclipse/のディレクトリにコピーしてください。
 7. 以下のコマンドを実行し、dockerをビルド＆起動させてください。
   ```
   docker-compose build
@@ -39,11 +39,18 @@
 　 
 
 # ファームウェアを分割する
-1. 分割したいファームウェアは、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/にマウントされています。
+1. 分割したいファームウェアを、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/としてマウントされています。
 1. docker上で`/root/firmware-mod-kit/extract_elf.sh`　を実行してください。/mnt/raw_firmwares/に置かれているファームウェアの分割が始まります。
 1. 分割されたファームウェアは、/mnt/raw_firmwares/extracted/に置かれます。
 
-# ELFファイルをGhiraにインポートする
+# Ghidraにファームウェアをインポートする
+1. 「ファームウェアを分割する」の手順を実行した後、`/root/firmware-mod-kit/import_elf_ghidra.sh`　を実行してください。
+1. 分割したファームウェアがGhidraにインポートされていきます。ファームウェアのサイズが大きい場合、インポートに時間がかかる場合があります。
+1. ファームウェアごとにGhidraプロジェクトが作成され、/mnt/raw_firmwares/ghidraprj/に保存されます。
+1. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
+1. Ghidraから、File -> Open Projectを選択して`/mnt/raw_firmwares/ghidraprj/好きなファームウェア名.gpr`を開きます。
+
+###  （おまけ）Ghidraで新規プロジェクトを作成してELFをインポートする
 1. /root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun を実行してGhidraを起動してください。
 2. NewProjectを選択します。
 <img width="799" alt="スクリーンショット 2022-10-03 17 02 24" src="https://user-images.githubusercontent.com/2094358/193529640-51a17312-cf7f-4bd0-bc63-ecfa6b143030.png">
