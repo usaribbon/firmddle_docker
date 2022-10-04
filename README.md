@@ -50,7 +50,7 @@
 1. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
 1. Ghidraから、File -> Open Projectを選択して`/mnt/raw_firmwares/ghidraprj/好きなファームウェア名.gpr`を開きます。
 
-# Ghidraで新規プロジェクトを作成してELFをインポートする
+###  （おまけ）Ghidraで新規プロジェクトを作成してELFをインポートする
 1. /root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun を実行してGhidraを起動してください。
 2. NewProjectを選択します。
 <img width="799" alt="スクリーンショット 2022-10-03 17 02 24" src="https://user-images.githubusercontent.com/2094358/193529640-51a17312-cf7f-4bd0-bc63-ecfa6b143030.png">
