@@ -39,7 +39,7 @@
 　 
 
 # ファームウェアを分割する
-1. 分割したいファームウェアは、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/にマウントされています。
+1. 分割したいファームウェアを、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/としてマウントされています。
 1. docker上で`/root/firmware-mod-kit/extract_elf.sh`　を実行してください。/mnt/raw_firmwares/に置かれているファームウェアの分割が始まります。
 1. 分割されたファームウェアは、/mnt/raw_firmwares/extracted/に置かれます。
 
