@@ -44,7 +44,14 @@
 1. docker上で`/root/firmware-mod-kit/extract_elf.sh`　を実行してください。/mnt/raw_firmwares/に置かれているファームウェアの分割が始まります。
 1. 分割されたファームウェアは、/mnt/raw_firmwares/extracted/に置かれます。
 
-# ELFファイルをGhiraにインポートする
+# Ghidraにファームウェアをインポートする
+1. 「ファームウェアを分割する」の手順を実行した後、`/root/firmware-mod-kit/import_elf_ghidra.sh`　を実行してください。
+1. 分割したファームウェアがGhidraにインポートされていきます。ファームウェアのサイズが大きい場合、インポートに時間がかかる場合があります。
+1. ファームウェアごとにGhidraプロジェクトが作成され、/mnt/raw_firmwares/ghidraprj/に保存されます。
+1. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
+1. Ghidraから、File -> Open Projectを選択して`/mnt/raw_firmwares/ghidraprj/好きなファームウェア名.gpr`を開きます。
+
+# Ghidraで新規プロジェクトを作成してELFをインポートする
 1. /root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun を実行してGhidraを起動してください。
 2. NewProjectを選択します。
 <img width="799" alt="スクリーンショット 2022-10-03 17 02 24" src="https://user-images.githubusercontent.com/2094358/193529640-51a17312-cf7f-4bd0-bc63-ecfa6b143030.png">
