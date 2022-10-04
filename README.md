@@ -17,7 +17,7 @@
 ├── docker-compose.yml
 ├── gui
 │   └── Dockerfile
-└── raw_firmwares
+└── raw_firmwares   ←docker上では/mnt/raw_firmwares/としてマウントされます
     ├── eclipse
     │   └── eclipse-committers-2022-06-R-linux-gtk-x86_64.tar.gz
     ├── elf
