@@ -26,4 +26,4 @@ COPY raw_firmwares/eclipse/* /root/eclipse/
 RUN tar xfz /root/eclipse/eclipse-committers-2022-06-R-linux-gtk-x86_64.tar.gz 
 
 RUN mkdir /root/ghidra_scripts
-RUN cp /root/firmddle-ghidrascript/* /root/ghidra_scripts/
+RUN cp -r /root/firmddle-ghidrascript/* /root/ghidra_scripts/
