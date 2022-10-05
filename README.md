@@ -73,3 +73,7 @@
 11. プロジェクト画面の左上の「SAVE」ボタンを押して解析結果を保存します。
 <img width="513" alt="スクリーンショット 2022-10-03 17 06 54" src="https://user-images.githubusercontent.com/2094358/193529614-c10bb0cb-5da6-4f2f-ad89-948165df6b8d.png">
 
+# HeadlessAnalyzerの使い方
+* プロジェクト内の全ファイルに対してスクリプトを適用したいときは、下記のコマンドを実行してください
+`/root/firmusa/ghidra_10.1.5_PUBLIC/support/analyzeHeadless /mnt/raw_firmwares/ghidraprj binary2 -scriptPath /root/ghidra_scripts -postScript Yoda_API_Headless.java -process -recursive`
+* スクリプトを適用した結果は、dockerの`/mnt/raw_firmwares/logs/`、またはホストPCの`このgitリポジトリ/raw_firmwares/logs/`に保存されています。
