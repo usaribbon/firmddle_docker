@@ -23,7 +23,7 @@ RUN chmod +x /root/firmware-mod-kit/src/binwalk-2.1.1/src/scripts/binwalk
 
 RUN mkdir /root/eclipse
 COPY raw_firmwares/eclipse/* /root/eclipse/
-RUN tar xfz /root/eclipse/eclipse-committers-2022-06-R-linux-gtk-x86_64.tar* 
+RUN tar -xvf /root/eclipse/eclipse-committers-2022-06-R-linux-gtk-x86_64.tar* 
 
 RUN mkdir /root/ghidra_scripts
 RUN cp -r /root/firmddle-ghidrascript/* /root/ghidra_scripts/
