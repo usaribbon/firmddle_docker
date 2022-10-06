@@ -29,9 +29,9 @@
   docker-compose build
   docker-compose up -d
   ```
-  * (Windows)iptablesの関係でStep7,9で初回ビルドは失敗してしまいます。dockerを再起動して、もう一度ビルドコマンドを実行してみてください
+  * (Windows)iptablesの関係でStep7,9で初回ビルドは失敗してしまいます。その際はdockerを再起動して、もう一度ビルドコマンドを実行してみてください。
 
-7. ホストPCのWEBブラウザから`http://127.0.0.1:8080/`にアクセスしてdockerコンテナに入ってください。
+7. ホストPCのWEBブラウザから`http://127.0.0.1:8080/`にアクセスしてdockerコンテナに入ってください。（環境によって接続までに数分〜数十分かかる場合があります）
   ![docker](https://user-images.githubusercontent.com/2094358/193526468-df754d54-5979-439d-b004-5de2ee806302.png)
 8. ファイルマネージャーから`/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`にアクセスし、Ghidraを起動してください。
   ![docker](https://user-images.githubusercontent.com/2094358/193527140-b074dc9c-6243-42c9-b458-4cf1d3ec6b8e.png)
