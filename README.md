@@ -23,14 +23,13 @@
     ├── extracted
     ├── ghidraprj
     ├── raw
-    │   └── Aceex-NR22
-    │     └── r13832-Aceex22.bin
 ```
 6. gitリポジトリ内で以下のコマンドを実行し、dockerをビルド＆起動させてください。
   ```
   docker-compose build
   docker-compose up -d
   ```
+  * (Windows)iptablesの関係でStep7,9で初回ビルドは失敗してしまいます。dockerを再起動して、もう一度ビルドコマンドを実行してみてください
 
 7. ホストPCのWEBブラウザから`http://127.0.0.1:8080/`にアクセスしてdockerコンテナに入ってください。
   ![docker](https://user-images.githubusercontent.com/2094358/193526468-df754d54-5979-439d-b004-5de2ee806302.png)
