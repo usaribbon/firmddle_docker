@@ -37,6 +37,7 @@
   ![docker](https://user-images.githubusercontent.com/2094358/193527140-b074dc9c-6243-42c9-b458-4cf1d3ec6b8e.png)
 　 
 
+
 # ファームウェアを分割する
 1. 分割したいファームウェアを、gitリポジトリのraw_firmwares/raw/に置いてください。dockerには/mnt/raw_firmwares/としてマウントされています。
 1. docker上で`/root/firmware-mod-kit/extract_elf.sh`　を実行してください。/mnt/raw_firmwares/に置かれているファームウェアの分割が始まります。
@@ -56,7 +57,7 @@
 3. Non-Shared Projectを選択します。
 <img width="670" alt="スクリーンショット 2022-10-03 17 02 31" src="https://user-images.githubusercontent.com/2094358/193529639-d7445ae5-359a-479f-ad40-86067eec3906.png">
 4. プロジェクトの保存先を指定します。
-<img width="672" alt="スクリーンショット 2022-10-03 17 03 34" src="https://user-images.githubusercontent.com/2094358/193529635-bd7c6981-5d1c-4cad-bc94-b24471f46f6e.png">
+<img width="671" alt="スクリーンショット 2022-10-17 19 09 52" src="https://user-images.githubusercontent.com/2094358/196151437-ca11d187-7b10-4874-bcae-5230d1789449.png">
 5. Import Fileを選択します。
 <img width="796" alt="スクリーンショット 2022-10-03 17 04 10" src="https://user-images.githubusercontent.com/2094358/193529630-6f8c1445-0ba0-4397-8030-736604da148f.png">
 6. 読み込ませるELFファイルを指定します。
