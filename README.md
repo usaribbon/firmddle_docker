@@ -127,7 +127,7 @@ The English version is written after Japanese version.
 1. The split firmware will be imported into Ghidra. If the firmware is large, the import may take some time.
 1. A Ghidra project will be created for each firmware and saved in /mnt/raw_firmwares/ghidraprj/.
 1. Access `/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun` from the file manager and start Ghidra.
-`. From Ghidra, select File -> Open Project and open `/mnt/raw_firmwares/ghidraprj/firmware_name.gpr` of your choice.
+1. From Ghidra, select File -> Open Project and open `/mnt/raw_firmwares/ghidraprj/firmware_name.gpr` of your choice.
 
 ###  (extra) Create a new project in Ghidra and import the ELF
 1. Run Ghidra by executing `/root/firmusa/ghidra_10.1.5_PUBLIC_20220726/ghidraRun`
