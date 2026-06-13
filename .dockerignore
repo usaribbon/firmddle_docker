@@ -1,0 +1,14 @@
+.git
+.pytest_cache
+__pycache__
+*.pyc
+workspace/runs/*
+workspace/input/*
+raw_firmwares/extracted/*
+raw_firmwares/elf/*
+raw_firmwares/ghidraprj/*
+raw_firmwares/logs/*
+!raw_firmwares/extracted/sample.txt
+!raw_firmwares/elf/sample
+!raw_firmwares/ghidraprj/sample
+!raw_firmwares/logs/sample.txt

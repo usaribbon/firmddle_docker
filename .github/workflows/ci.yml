@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+      - name: Run unit tests
+        run: python -m unittest discover -s tests
+
+  docker-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build CLI image
+        run: docker compose build firmddle
+      - name: Check tool availability
+        run: docker compose run --rm firmddle doctor
+      - name: Run demo
+        run: docker compose run --rm firmddle demo --out /workspace/runs/ci-demo --max-files 1
+      - name: Extract binary2 sample
+        run: docker compose run --rm firmddle prepare /repo/raw_firmwares/raw/binary2/binary2.bin --out /workspace/runs/ci-binary2
+      - name: Verify binary2 extraction
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          summary_path = Path("workspace/runs/ci-binary2/_analysis/prepare_summary.json")
+          summary = json.loads(summary_path.read_text(encoding="utf-8"))
+          assert summary["extraction_ok"] is True, summary
+          assert summary["elf_files"] == 131, summary
+          print(summary)
+          PY

@@ -8,3 +8,11 @@ raw_firmwares/extracted/*
 .DS*
 bin/*
 !sample*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+workspace/runs/*
+workspace/input/*
+!workspace/runs/.gitkeep
+!workspace/input/.gitkeep
