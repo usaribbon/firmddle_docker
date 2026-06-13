@@ -1,15 +1,24 @@
-version: '3'
- 
 services:
-  ubuntu-gui:
+  firmddle:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: firmddle-cli:dev
+    volumes:
+      - ./workspace:/workspace
+      - ./raw_firmwares:/repo/raw_firmwares:ro
+
+  ghidra-gui:
+    profiles:
+      - legacy-gui
     build:
       context: .
       dockerfile: ./gui/Dockerfile
-    container_name: 'ubuntu-gui'
+    container_name: firmddle-ghidra-gui
     tty: true
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
-          - type: bind
-            source: './raw_firmwares/'
-            target: '/mnt/raw_firmwares'
+      - type: bind
+        source: ./raw_firmwares
+        target: /mnt/raw_firmwares
